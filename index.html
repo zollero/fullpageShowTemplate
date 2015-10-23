@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="templateInitApp">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/jquery.fullpage.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="lib/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="lib/jquery.fullpage.min.js"></script>
+	<script type="text/javascript" src="lib/angular.min.js"></script>
+	<script type="text/javascript" src="js/controller.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+	<div id="pagesArea" ng-controller="initDataCtrl">
+		<div class="section" ng-repeat="content in contentData">
+			<div class="showAreaTitle">
+				<div class="title"><p>{{content.title}}</p></div>
+			</div>
+			<div class="showArea">
+				<div class="abstract">
+					<p>
+						{{content.abstract}}
+					</p>
+				</div>
+				<div class="codeArea">
+					<pre>
+						{{content.code}}
+					</pre>
+				</div>
+				<div class="conclusion">
+					<p>{{content.conclusion}}</p>
+				</div>
+			</div>
+			<div class="showAreaBottom">
+				<p class="pageFooter">第{{content.pageNo}}页，共{{pageCount}}页</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
